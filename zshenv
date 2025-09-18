@@ -73,4 +73,5 @@ export HOST="$(hostname)"
 
 export STAFF_ID=rdnetto
 export ATLAS_USER=rdnetto
-
+# Stop the RDEs from replacing my prompt
+export DISABLE_ZSH_DEFAULT_PROMPT=true
