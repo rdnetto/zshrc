@@ -16,6 +16,10 @@ if [ -d ~/.jenv/ ] ; then
     eval "$(jenv init -)"
 fi
 
+if which podman &> /dev/null; then
+    alias docker=podman
+fi
+
 # Aliases for grepping POMs / plugin.xml
 alias pom-grep="git ls-files pom.xml '**/pom.xml' | xargs -r rg"
 alias plugin-grep="find . -iname atlassian-plugin.xml -print0 | xargs -0 -r ag"
