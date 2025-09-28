@@ -6,6 +6,7 @@ for dir (
     $HOME/.local/bin
     $HOME/bin
     $HOME/.cargo/bin
+    $HOME/.yarn/bin
 
     # Android SDK path
     $HOME/bin/android-sdk-linux/platform-tools
