@@ -88,7 +88,7 @@ alias hoogle='nice ionice -c3 stack hoogle -- server --local -p 60080'
 # Cargo aliases
 alias cb='cargo build'
 alias cr='cargo run'
-alias cD='cargo doc --workspace --open;'
+alias cD='cargo doc --workspace --open'
 
 # Needed for tmux <3.1 - https://github.com/tmux/tmux/issues/142
 alias tmux='tmux -f ~/.config/tmux/tmux.conf'
