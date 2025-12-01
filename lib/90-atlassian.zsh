@@ -62,11 +62,16 @@ function bamboo_creds() {
     export BAMBOO_PASSWORD=$(sudo awk -F= '($1 == "password"){print $2}' $CON)
 }
 
-function jira_ci() {
+function bbp() {
     branch="$(git rev-parse --abbrev-ref HEAD)"
     encoded_branch="$(python3 -c "import urllib.parse; print(urllib.parse.quote('$branch', safe=''))")"
-    echo "https://bitbucket.org/jira-cloud-cicd/jira/pipelines/results/branch/$encoded_branch/page/1"
-    open "https://bitbucket.org/jira-cloud-cicd/jira/pipelines/results/branch/$encoded_branch/page/1"
+
+    remote="$(git remote get-url origin | sed 's|^ssh://||' | sed 's|:|/|')"
+    workspace="$(echo "$remote" | cut -d/ -f2)"
+    repo="$(echo "$remote" | cut -d/ -f3 | sed 's/\.git$//')"
+
+    echo "https://bitbucket.org/$workspace/$repo/pipelines/results/branch/$encoded_branch/page/1"
+    open "https://bitbucket.org/$workspace/$repo/pipelines/results/branch/$encoded_branch/page/1"
 }
 
 function get_network-segment() {
