@@ -1,5 +1,8 @@
 ZSH=$HOME/.zsh
 
+# Keep PATH free of duplicate entries.
+typeset -U path PATH
+
 new_path=""
 for dir (
     # Local binaries
@@ -29,11 +32,12 @@ for dir (
     $HOME/.jsync/bin
 ); do
     if [ -d "$dir" ]; then
-        new_path="$new_path:$dir"
+        # If new_path is set, append :, otherwise leave blank
+        new_path="${new_path:+$new_path:}$dir"
     fi
 done
 
-export PATH="$new_path:$PATH"
+export PATH="${new_path:+$new_path:}$PATH"
 unset new_path
 
 # Misc setup
