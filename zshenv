@@ -3,6 +3,8 @@ ZSH=$HOME/.zsh
 # Keep PATH free of duplicate entries.
 typeset -U path PATH
 
+export ANDROID_HOME=/home/renee/scratch/Android-SDK
+
 new_path=""
 for dir (
     # Local binaries
@@ -11,8 +13,12 @@ for dir (
     $HOME/.cargo/bin
     $HOME/.yarn/bin
 
-    # Android SDK path
-    $HOME/bin/android-sdk-linux/platform-tools
+    # Android SDK
+    $ANDROID_HOME/cmdline-tools/latest/bin/
+    $ANDROID_HOME/platform-tools/
+    $ANDROID_HOME/emulator/
+    $ANDROID_HOME/build-tools/36.1.0/
+    $ANDROID_HOME/extras/google/auto/
 
     # Homebrew
     /opt/homebrew/bin
