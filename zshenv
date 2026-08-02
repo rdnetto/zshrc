@@ -76,6 +76,9 @@ fi
 # Used in sway config for host-specific configuration
 export HOST="$(hostname)"
 
+# Make Claude Code XDG-compliant(ish)
+export CLAUDE_CONFIG_DIR=$HOME/.config/claude
+
 export STAFF_ID=rdnetto
 export ATLAS_USER=rdnetto
 # Stop the RDEs from replacing my prompt
