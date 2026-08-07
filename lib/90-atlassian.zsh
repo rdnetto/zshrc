@@ -10,12 +10,6 @@ export JIRA_REPO="$HOME/sources/jira"
 # LaaS CLI support
 [ -f /usr/share/zsh/site-functions/_laas ] && source /usr/share/zsh/site-functions/_laas
 
-# Use jenv
-if [ -d ~/.jenv/ ] ; then
-    export PATH="$HOME/.jenv/bin:$PATH"
-    eval "$(jenv init -)"
-fi
-
 if which podman &> /dev/null; then
     alias docker=podman
 fi

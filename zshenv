@@ -41,7 +41,8 @@ export PATH="${new_path:+$new_path:}$PATH"
 unset new_path
 
 # Misc setup
-[ ! -d ~/.jenv/ ] || eval "$(jenv init -)"
+# Skip jenv init under the Claude Code sandbox (it writes ~/.jenv/jenv.version, which is blocked)
+[[ -n "${SANDBOX_RUNTIME-}" ]] || ! (which jenv&>/dev/null) || eval "$(jenv init -)"
 [ ! -f /opt/homebrew/bin/brew ] || eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Environment
