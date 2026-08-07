@@ -80,6 +80,13 @@ export HOST="$(hostname)"
 # Make Claude Code XDG-compliant(ish)
 export CLAUDE_CONFIG_DIR=$HOME/.config/claude
 
+# Expose the Claude Code session scratchpad as $SP.
+if [[ -n ${CLAUDE_CODE_SESSION_ID-} ]]; then
+    sp=( ${CLAUDE_TMPDIR:-${CLAUDE_CODE_TMPDIR:-/tmp/claude-$UID}}/*/$CLAUDE_CODE_SESSION_ID/scratchpad(N) )
+    (( $#sp )) && export SP=$sp[1]
+    unset sp
+fi
+
 export STAFF_ID=rdnetto
 export ATLAS_USER=rdnetto
 # Stop the RDEs from replacing my prompt
