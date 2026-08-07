@@ -60,6 +60,11 @@ alias mpv='mpv --no-audio-display'
 alias jmtpfs='echo "Just use adb, its 40x faster"; false'
 alias android_vnc=scrcpy
 
+# OSX-specific
+if [ -d /Users ]; then
+    alias kitty="open -a Kitty ."
+fi
+
 # Support using Kitty with systems that don't have the terminfo installed, but only if stdin is a tty
 function ssh() {
     # Prevent OSX from disrupting the session
