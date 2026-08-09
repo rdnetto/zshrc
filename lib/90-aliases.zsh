@@ -59,6 +59,7 @@ alias virsh='virsh --connect qemu:///system'
 alias mpv='mpv --no-audio-display'
 alias jmtpfs='echo "Just use adb, its 40x faster"; false'
 alias android_vnc=scrcpy
+alias rpmconf='env PAGER="bat -l diff" rpmconf'
 
 # OSX-specific
 if [ -d /Users ]; then
