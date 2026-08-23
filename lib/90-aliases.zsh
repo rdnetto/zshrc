@@ -133,6 +133,7 @@ alias gbg='git bisect good'
 
 alias gb='git branch'
 alias gba='git branch -a'
+alias gbv='git branch -M "$(git branch --show-current | vipe)"'
 
 alias gco='git checkout'
 alias gcom='git checkout master'
