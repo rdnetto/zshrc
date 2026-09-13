@@ -104,6 +104,13 @@ alias v="nvim"
 alias qv="nvim-qt"
 alias qvdiff="nvim-qt $@ -- -d"
 
+# Claude Code
+alias claude=$HOME/.config/claude/scripts/claude-wrapper
+alias cH='claude --model haiku'
+alias cS='claude --model sonnet'
+alias cO='claude --model opus'
+alias cF='claude --model fable'
+
 # Git aliases
 alias t=tig
 alias dm=dispatch-merge
