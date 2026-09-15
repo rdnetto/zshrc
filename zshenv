@@ -68,8 +68,8 @@ YSU_MODE=BESTMATCH
 #Force 256 colour support (needed for tmux)
  [[ "$TERM" == "xterm" ]] && export TERM="xterm-256color"
 
-# Set SWAYSOCK if unset
-if [[ -z "${SWAYSOCK-}" ]] && pgrep -x sway >/dev/null ; then
+# Set SWAYSOCK if unset (skip pgrep under the sandbox, where process listing is blocked)
+if [[ -z "${SANDBOX_RUNTIME-}" ]] && [[ -z "${SWAYSOCK-}" ]] && pgrep -x sway >/dev/null ; then
     export SWAYSOCK="/run/user/$(id -u)/sway-ipc.$(id -u).$(pgrep -x sway).sock"
 fi
 
