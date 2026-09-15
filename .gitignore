@@ -1,3 +1,4 @@
 cache/
 history
-
+# Safe place to keep tokens that won't get tracked/committed
+zshenv.local
