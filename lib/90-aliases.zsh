@@ -40,6 +40,7 @@ alias ag=rg
 alias agQ='rg -F'
 alias agJ='rg -t java'
 alias agH='rg -t haskell'
+alias agP='rg -t python'
 alias iotop='sudo iotop -o'
 alias mtr='mtr --curses --displaymode 2'
 alias dmesg='dmesg -H'
