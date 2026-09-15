@@ -36,14 +36,6 @@ fi
 
 alias lsblk='lsblk -o NAME,MAJ:MIN,SIZE,RO,TYPE,FSTYPE,UUID,MOUNTPOINT'
 alias rgrep='grep -rn --exclude-dir=.git'
-alias rg="rg --smart-case                \
-             --colors line:fg:yellow     \
-             --colors line:style:bold    \
-             --colors path:fg:green      \
-             --colors path:style:bold    \
-             --colors match:fg:black     \
-             --colors match:bg:yellow    \
-             --colors match:style:nobold "
 alias ag=rg
 alias agQ='rg -F'
 alias agJ='rg -t java'

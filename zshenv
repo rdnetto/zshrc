@@ -83,8 +83,9 @@ fi
 # Used in sway config for host-specific configuration
 export HOST="$(hostname)"
 
-# Make Claude Code XDG-compliant(ish)
+# Make these XDG-compliant(ish)
 export CLAUDE_CONFIG_DIR=$HOME/.config/claude
+export RIPGREP_CONFIG_PATH=$HOME/.config/ripgrep/ripgreprc
 
 # Expose the Claude Code session scratchpad as $SP.
 if [[ -n ${CLAUDE_CODE_SESSION_ID-} ]]; then
