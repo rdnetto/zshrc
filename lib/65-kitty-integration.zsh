@@ -1,4 +1,4 @@
-# This needs to be sourced after the prompt has been set for powerline
+# This needs to be sourced after the prompt has been configured by starship
 # Taken from https://sw.kovidgoyal.net/kitty/shell-integration/#manual-shell-integration
 
 if [ -n "$KITTY_INSTALLATION_DIR" ]; then
