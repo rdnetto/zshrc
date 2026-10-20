@@ -75,10 +75,10 @@ function ssh() {
         CAF=()
     fi
 
-    if [ -t 0 ] && [ "$TERM" = "xterm-kitty" ] && which kitty >/dev/null ; then
+    if [ -t 0 ] && [ "$TERM" = "xterm-kitty" ] && [ -z "${SSH_CLIENT:-}" ] && which kitty >/dev/null ; then
         $CAF kitty +kitten ssh "$@"
     else
-        $CAF ssh "$@"
+        $CAF =ssh "$@"
     fi
 }
 
