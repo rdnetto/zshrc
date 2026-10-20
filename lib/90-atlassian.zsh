@@ -13,7 +13,6 @@ alias an='atlas nebulae'
 alias dc='docker compose'
 alias mci='mvn clean install -DskipTests'
 alias mcp='mvn clean package -DskipTests'
-alias tf='terraform'
 
 # Helpers
 alias andc='docker compose -p "$(docker compose ls --format json | jq -r "map(select(.ConfigFiles | test(\"nebulae\")))[0].Name")"'

@@ -54,6 +54,13 @@ alias jmtpfs='echo "Just use adb, its 40x faster"; false'
 alias android_vnc=scrcpy
 alias rpmconf='env PAGER="bat -l diff" rpmconf'
 
+# Terraform
+if (which terraform &>/dev/null); then
+    alias tf='terraform'
+elif (which tofu &>/dev/null); then
+    alias tf='tofu'
+fi
+
 # OSX-specific
 if [ -d /Users ]; then
     alias kitty="open -a Kitty ."
