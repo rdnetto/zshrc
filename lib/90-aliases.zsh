@@ -115,6 +115,7 @@ alias cF='claude --model fable'
 alias t=tig
 alias dm=dispatch-merge
 alias gfzf='git ls-files | fzf'
+alias git-default-branch="git symbolic-ref refs/remotes/origin/HEAD | sed 's|.*/||'"
 
 alias g='git'
 alias gs='git status'
@@ -126,7 +127,7 @@ alias gf='git fetch'
 alias gft='git fetch --tags'
 alias gpl='git pull --prune'
 alias gplr='git pull --prune --rebase'
-alias gplm='git checkout master && git pull --prune && git checkout -'
+alias gplm='git checkout $(git-default-branch) && git pull --prune && git checkout -'
 alias ga='git add'
 alias gap='git add -p'
 alias gsh='git show'
@@ -143,7 +144,7 @@ alias gba='git branch -a'
 alias gbv='git branch -M "$(git branch --show-current | vipe)"'
 
 alias gco='git checkout'
-alias gcom='git checkout master'
+alias gcom='git checkout $(git-default-branch)'
 alias gcop='git checkout -p'
 
 alias gc='git commit -v'
@@ -161,7 +162,7 @@ alias gcf='git commit --fixup'
 
 alias gd='git diff'
 alias gdc='git diff --cached'
-alias gdm='git diff master'
+alias gdm='git diff $(git-default-branch)'
 alias gdr='git diff root'
 alias gdn='git diff --no-index --color=always'
 alias gdnw='git diff --no-index --color-words'
@@ -176,7 +177,7 @@ alias gl-authors="git log --pretty=format:'%h %<(20)%an %<(40)%ae %s'"
 alias gm='git merge'
 alias gma='git merge --abort'
 alias gmt='git mergetool --no-prompt'
-alias gmm='git merge master --no-edit'
+alias gmm='git merge $(git-default-branch) --no-edit'
 
 alias grb='git rebase'
 alias grbi='git rebase -i'
